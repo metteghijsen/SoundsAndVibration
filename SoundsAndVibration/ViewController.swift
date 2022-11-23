@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import AudioToolbox //Nodig om de iPhone te laten vibreren
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
 
+    @IBAction func DoSomethingAction(_ sender: Any) {
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate)) // Laat iPhone vibreren, maar speelt een geluid wanneer device niet kan vibreren
+    }
 }
 
